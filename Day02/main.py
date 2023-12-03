@@ -1,13 +1,12 @@
 import re
 
-def readData():
-    #with open('sample.txt', "r") as read_file:
-    with open('input.txt', "r") as read_file:
+def readData(fileName='input.txt'):
+    with open(fileName, "r") as read_file:
         inputData = [line.rstrip() for line in read_file]
 
         return inputData
 
-def max_number(game_data):
+def max_number(game_data): 
     games = game_data.split(';')
     red_max = 0
     blue_max = 0
