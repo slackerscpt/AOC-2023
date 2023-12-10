@@ -56,8 +56,19 @@ def setup_each_card(cards):
             cards_played[active_card] = (previous_number + 1)
         else:
             cards_played[active_card] = 1
+
+        other_cards = range(1, cards[active_card] + 1)
+        print(other_cards)
+        for extra in other_cards:
+            selected_card = str(int(active_card) + extra)
+            if selected_card in cards_played:
+                previous_number = cards_played[selected_card]
+                print("%s previous number: %d" %(selected_card, previous_number))
+                cards_played[selected_card] = previous_number + 1
+            else:
+                cards_played[selected_card] = 1
         
-        
+    print(cards_played)
     #need to count each card and add to total of that card. 
     #is card 1 wins 3 cards 2,3,4 will have extra
     return 0
